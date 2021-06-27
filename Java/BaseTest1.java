@@ -650,26 +650,8 @@ public class BaseTest {
 
 	}
 
-	public void scrollToCard() throws InterruptedException {
-		Thread.sleep(2000);
-		Dimension size = getDriver().manage().window().getSize();
 
-		int device_width = (int) (size.width);
-		int device_height = (int) (size.height);
-		int startY = (int) (device_height * 0.47);
-		int endY = startY;
-		int startX = (int) (device_width * 0.95);
-		int endX = (int) (device_width * 0.55);
-		TouchAction action=new TouchAction(getDriver());
-		action.press(PointOption.point(startX, startY)).waitAction(WaitOptions.waitOptions(Duration.ofMillis(500))).moveTo(PointOption.point(endX, endY)).release();
-		getDriver().performTouchAction(action);
-		utils.log().info("Element Scroll");
-		screenShot();
-		ExtentReport.getTest().log(Status.INFO,"Element Scroll");             
-
-	}
-
-	public Boolean elementDisplayed(MobileElement element,String msg) {
+	public Boolean elementISDisplayed(MobileElement element,String msg) {
 
 		Boolean isDisplayed=false;;
 		WebDriverWait wait = new WebDriverWait(getDriver(), 3);
