@@ -651,7 +651,7 @@ public class BaseTest {
 	}
 
 
-	public Boolean elementISDisplayed(MobileElement element,String msg) {
+	public Boolean elementIDisplayed(MobileElement element,String msg) {
 
 		Boolean isDisplayed=false;;
 		WebDriverWait wait = new WebDriverWait(getDriver(), 3);
